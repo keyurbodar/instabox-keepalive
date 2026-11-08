@@ -2,7 +2,7 @@ name: instabox-keepalive
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Renew Instabox activity leases
         env:
           INSTABOX_API_KEY: ${{ secrets.INSTABOX_API_KEY }}
